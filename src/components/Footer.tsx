@@ -51,6 +51,10 @@ export default function Footer() {
                 <Link to="/blog" className="text-gray-400 hover:text-white">
                   Blog
                 </Link>
+                            <li>
+                <Link to="/admin" className="text-gray-400 hover:text-white">
+                  Admin
+                </Link>
               </li>
             </ul>
           </div>
