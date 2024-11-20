@@ -54,7 +54,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/blog" className="text-gray-400 hover:text-white">
-                  Blog
+                  Admin
                 </Link>
               </li>
             </ul>
