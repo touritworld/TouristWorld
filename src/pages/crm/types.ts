@@ -18,6 +18,7 @@ export interface Lead {
   fechaactualizacion: string;
   costo?: number;
   precioventa?: number;
+  porcentajeIncremento?: number;
 }
 
 export type Stage =

@@ -28,6 +28,7 @@ const emptyLead: Lead = {
   fechaactualizacion: new Date().toISOString(),
   costo: 0,
   precioventa: 0,
+  porcentajeIncremento: 0,
 };
 
 const formatNumber = (value: number) => {
@@ -354,7 +355,7 @@ export default function LeadModal({
                     });
                   }}
                   min="0"
-                  className="mt-1 block w-full  w-24 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full    w-24 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   placeholder="0"
                 />
               </div>
