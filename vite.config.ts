@@ -10,5 +10,6 @@ export default defineConfig({
   build: {
     outDir: "dist", // Carpeta donde se construirá el proyecto
   },
-  base: "./", // Asegura que los recursos estén correctamente referenciados, incluso en subdirectorios
+  base: "/index.html/",
+  // Asegura que los recursos estén correctamente referenciados, incluso en subdirectorios
 });
