@@ -351,7 +351,7 @@ export default function LeadModal({
                       return {
                         ...prev,
                         porcentajeIncremento: porcentaje,
-                        precioVenta: nuevoPrecio,
+                        precioventa: nuevoPrecio,
                       };
                     });
                   }}
@@ -367,7 +367,7 @@ export default function LeadModal({
                 </label>
                 <input
                   type="text"
-                  name="precioVenta"
+                  name="precioventa"
                   value={formatNumber(formData.precioventa || 0)}
                   onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
