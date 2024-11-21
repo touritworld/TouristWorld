@@ -41,10 +41,10 @@ export const STAGES: Stage[] = [
 ];
 
 export const VEHICLE_TYPES = [
-  "Duster 4 Pax",
-  "Van H1 8 Pax",
-  "Van Master 15 Pax",
-  "Van Sprinter 19 Pax",
+  "Duster",
+  "Van H1",
+  "Van Master",
+  "Van Sprinter",
   "Bus 30 Pax",
   "Bus 40 Pax",
 ] as const;
