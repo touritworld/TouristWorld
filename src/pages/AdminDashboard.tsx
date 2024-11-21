@@ -84,7 +84,7 @@ export default function AdminDashboard() {
       const payload = { ...updatedLead };
       delete payload.porcentajeIncremento; // Eliminar porcentajeIncremento
       if (payload.precioventa === 0) {
-        delete payload.precioventa; // Eliminar si el precioVenta es 0
+        delete payload.precioventa; // Eliminar si el precioventa es 0
       }
 
       const response = await fetch(
