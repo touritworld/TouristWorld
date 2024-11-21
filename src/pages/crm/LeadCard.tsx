@@ -79,7 +79,7 @@ export default function LeadCard({ lead, onClick }: LeadCardProps) {
         </div>
         <div className="flex items-center">
           <Truck className="w-4 h-4 mr-1" />
-          <span>{lead.tipoVehiculo}</span>
+          <span>{lead.tipovehiculo}</span>
         </div>
       </div>
     </div>
