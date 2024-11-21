@@ -177,10 +177,10 @@ export default function BookingForm() {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="">Seleccione un vehículo</option>
-                <option value="Duster 4 Pax">Duster 4 Pax</option>
-                <option value="Van H1 8 Pax">Van H1 8 Pax</option>
-                <option value="Van Master 15 Pax">Van Master 15 Pax</option>
-                <option value="Van Sprinter 19 Pax">Van Sprinter 19 Pax</option>
+                <option value="Duster">Duster 4 Pax</option>
+                <option value="Van H1">Van H1 8 Pax</option>
+                <option value="Van Master">Van Master 15 Pax</option>
+                <option value="Van Sprinter">Van Sprinter 19 Pax</option>
                 <option value="Bus 30 Pax">Bus 30 Pax</option>
                 <option value="Bus 40 Pax">Bus 40 Pax</option>
               </select>
