@@ -1,37 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Car, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "./assets/logo.png";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navClass = isScrolled
+    ? "bg-background shadow-lg"
+    : "bg-transparent";
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navClass}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <Car className="h-8 w-8 text-purple-600" />
-              <span className="ml-2 text-xl font-bold text-gray-800">
-                Service WorldTour
-              </span>
+            <Link to="/" className="flex-shrink-0">
+              <img className="h-12 w-auto" src={logo} alt="Service WorldTour" />
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-600 hover:text-blue-600">
+            <Link
+              to="/"
+              className="text-text-secondary hover:text-primary transition-colors"
+            >
               Home
             </Link>
-            <Link to="/book" className="text-gray-600 hover:text-blue-600">
+            <Link
+              to="/book"
+              className="text-text-secondary hover:text-primary transition-colors"
+            >
               Book Service
             </Link>
-            <Link to="/blog" className="text-gray-600 hover:text-blue-600">
+            <Link
+              to="/blog"
+              className="text-text-secondary hover:text-primary transition-colors"
+            >
               Blog
             </Link>
             <Link
               to="/book"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className="bg-primary text-background font-bold px-5 py-2 rounded-md hover:bg-yellow-500 transition-transform transform hover:scale-105"
             >
               Reservar
             </Link>
@@ -41,7 +63,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-text-primary hover:text-primary"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -55,25 +77,35 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-background">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="block px-3 py-2 text-gray-600 hover:text-blue-600"
+              className="block px-3 py-2 text-text-secondary hover:text-primary rounded-md"
+              onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/book"
-              className="block px-3 py-2 text-gray-600 hover:text-blue-600"
+              className="block px-3 py-2 text-text-secondary hover:text-primary rounded-md"
+              onClick={() => setIsOpen(false)}
             >
               Book Service
             </Link>
             <Link
               to="/blog"
-              className="block px-3 py-2 text-gray-600 hover:text-blue-600"
+              className="block px-3 py-2 text-text-secondary hover:text-primary rounded-md"
+              onClick={() => setIsOpen(false)}
             >
               Blog
+            </Link>
+            <Link
+              to="/book"
+              className="block w-full text-left bg-primary text-background font-bold mt-2 px-3 py-2 rounded-md hover:bg-yellow-500"
+              onClick={() => setIsOpen(false)}
+            >
+              Reservar
             </Link>
           </div>
         </div>
